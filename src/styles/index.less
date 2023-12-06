@@ -1,0 +1,41 @@
+@import url(./theme-config.less);
+@import url(./border.less);
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #ebedf0; // windicss 默认值
+}
+img,
+svg {
+  max-width: 100%;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+body {
+  color: rgba(var(--color-default, 0.85));
+  background-color: var(--van-background);
+  font-size: 14px;
+  line-height: 1.428571429;
+}
+a {
+  color: inherit;
+}

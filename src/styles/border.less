@@ -1,0 +1,14 @@
+.border-bottom {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: var(--van-border-color);
+    transform: scaleY(0.5);
+    transform-origin: 0 bottom;
+  }
+}
