@@ -1,4 +1,4 @@
-import type { RouteLocationNormalized, RouteLocationRaw, Router } from 'vue-router'
+import type { RouteLocationNormalized, Router } from 'vue-router'
 
 // import { GlobalStore } from '@/store'
 import { isEmpty } from 'lodash-es'
@@ -7,7 +7,7 @@ import { useUserStore } from '@/store/modules/user'
 import env from '@/utils/env'
 
 const user = useUserStore(store)
-async function canUserAccess(router: Router, to: RouteLocationRaw) {
+async function canUserAccess() {
   if (isEmpty(user.getIdNumber)) {
     if (env.DEV) {
       const userInfo = {

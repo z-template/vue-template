@@ -30,7 +30,7 @@ function uiPackageAutoImportGlobals() {
 }
 export default [
   {
-    ignores: ['./dist/', 'node_modules', 'public', 'types', 'env'],
+    ignores: ['./dist/**/**.js', 'node_modules'],
     rules: {
       ...js.configs.recommended.rules,
       'max-lines': ['error', { max: 750, skipBlankLines: true, skipComments: true }]
@@ -39,9 +39,9 @@ export default [
   prettierConfig,
   {
     files: ['**/*.{ts,tsx,vue,cjs}'],
-    ignores: ['./dist/', 'node_modules', 'public', 'types', 'env'],
+    ignores: ['./dist/**/**.js', 'node_modules', 'public', 'types', 'env'],
     plugins: {
-      prettier: prettierPlugin,
+      prettier: prettierPlugin
     },
     languageOptions: {
       globals: {
@@ -51,7 +51,7 @@ export default [
       }
     },
     rules: {
-      'prettier/prettier': 'error',
+      'prettier/prettier': 'error'
     }
   },
   {
@@ -65,18 +65,19 @@ export default [
         tsconfigRootDir: __dirname,
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: ['./tsconfig.json'],
-      },
+        project: ['./tsconfig.json']
+      }
     },
     rules: {
       ...typescriptEslint.configs['recommended'].rules,
+      '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/brace-style': 'off',
       '@typescript-eslint/comma-dangle': 'off',
-      '@typescript-eslint/no-redeclare': 'off',
+      '@typescript-eslint/no-redeclare': 'off'
     }
   },
   {
-    files: ['src/**/*.vue'],
+    files: ['src/**/*.vue', 'src/**/*.tsx', 'src/**/*.ts'],
     plugins: {
       vue: vuePlugin
     },
@@ -89,7 +90,7 @@ export default [
         project: ['./tsconfig.json'],
         sourceType: 'module',
         extraFileExtensions: ['.vue']
-      },
+      }
     },
     rules: {
       'vue/singleline-html-element-content-newline': 'off',
@@ -101,7 +102,7 @@ export default [
           order: [['template', 'script'], 'style']
         }
       ],
-      'vue/html-self-closing': 'off',
+      'vue/html-self-closing': 'off'
     }
   }
 ]

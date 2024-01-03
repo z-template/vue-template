@@ -15,12 +15,7 @@ onUpdated(() => {
 
 <template>
   <div :style="{ height: `${height}px` }" class="mt-2">
-    <div
-      ref="footRef"
-      class="fixed bottom-0 w-full px-5"
-      :class="{ 'bg-white border-t': slotDefault }"
-      v-bind="$attrs"
-    >
+    <div ref="footRef" class="fixed bottom-0 w-full px-5" :class="{ 'bg-white border-t': slotDefault }" v-bind="$attrs">
       <div v-if="slotDefault" class="py-4"><slot /></div>
       <div class="van-safe-area-bottom" />
     </div>
